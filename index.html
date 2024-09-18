@@ -73,6 +73,27 @@
             text-decoration: underline;
         }
     </style>
+    <script>
+        function validarFormulario(event) {
+            // Validação do telefone
+            const telefone = document.getElementById('telefone').value;
+            const telefoneRegex = /^[0-9]{10,15}$/; // Aceita números com 10 a 15 dígitos
+            if (!telefoneRegex.test(telefone)) {
+                alert('Por favor, insira um número de telefone válido com 10 a 15 dígitos.');
+                event.preventDefault(); // Impede o envio do formulário
+                return;
+            }
+
+            // Validação do e-mail
+            const email = document.getElementById('email').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Validação simples de formato de e-mail
+            if (!emailRegex.test(email)) {
+                alert('Por favor, insira um e-mail válido.');
+                event.preventDefault(); // Impede o envio do formulário
+                return;
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -80,7 +101,7 @@
         <h1>Preencha o Formulário</h1>
 
         <!-- Formulário que utiliza o serviço Formspree -->
-        <form action="https://formspree.io/f/xanwzkly" method="POST">
+        <form action="https://formspree.io/f/xanwzkly" method="POST" onsubmit="validarFormulario(event)">
             <label for="nome">Nome Completo:</label>
             <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
 
@@ -88,7 +109,7 @@
             <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
 
             <label for="telefone">WhatsApp:</label>
-            <input type="tel" id="telefone" name="telefone" placeholder="Digite seu número" pattern="^\+55\s\d{2}\s\d{9}$" required>
+            <input type="tel" id="telefone" name="telefone" placeholder="Digite seu número de telefone com DDD" required>
 
             <label for="mensagem">Mensagem:</label>
             <textarea id="mensagem" name="mensagem" placeholder="Descreva o serviço desejado" required></textarea>
