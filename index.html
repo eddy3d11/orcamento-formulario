@@ -21,6 +21,7 @@
         h1 {
             text-align: center;
             color: #ffffff;
+            font-size: 24px;
         }
         form {
             display: flex;
@@ -54,20 +55,6 @@
         button:hover {
             background-color: #597182;
         }
-        .social-icons {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .social-icons img {
-            width: 50px;
-            height: 50px;
-            margin: 20px;
-            opacity: 0.7;
-            transition: opacity 0.3s;
-        }
-        .social-icons img:hover {
-            opacity: 1;
-        }
         .arquivo-grande {
             margin-top: 20px;
             padding: 15px;
@@ -90,7 +77,7 @@
 <body>
 
     <div class="container">
-        <h1>Solicite um Orçamento</h1>
+        <h1>Preencha o Formulário</h1>
 
         <!-- Formulário que utiliza o serviço Formspree -->
         <form action="https://formspree.io/f/xanwzkly" method="POST">
@@ -101,26 +88,16 @@
             <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
 
             <label for="telefone">WhatsApp:</label>
-            <input type="tel" id="telefone" name="telefone" placeholder="+55 18 991111111" pattern="^\+55\s\d{2}\s\d{9}$" required>
+            <input type="tel" id="telefone" name="telefone" placeholder="Digite seu número" pattern="^\+55\s\d{2}\s\d{9}$" required>
 
             <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem" placeholder="Digite uma descrição detalhada do serviço desejado" required></textarea>
+            <textarea id="mensagem" name="mensagem" placeholder="Descreva o serviço desejado" required></textarea>
 
             <button type="submit">Enviar</button>
         </form>
 
         <div class="arquivo-grande">
-            <p>Precisa nos enviar arquivos grandes? Use o serviço do <a href="https://www.transfernow.net/pt" target="_blank" rel="noopener noreferrer">TransferNow</a> para enviar arquivos com segurança e nos informe via e-mail ou no formulário acima.</p>
-        </div>
-
-        <!-- Logos do Instagram e Behance com ajuste de acessibilidade e segurança -->
-        <div class="social-icons">
-            <a href="https://www.instagram.com/edipo3d/" target="_blank" rel="noopener noreferrer">
-                <img src="LOGO/black-and-white-instagram-logo-on-square-with-transparent-background-free-png.webp" alt="Perfil Instagram de Edipo3D">
-            </a>
-            <a href="https://www.behance.net/edipomendes" target="_blank" rel="noopener noreferrer">
-                <img src="LOGO/12660854-logotipo-do-behance-em-fundo-transparente-isolado-gratis-vetor.png" alt="Perfil Behance de Edipo Mendes">
-            </a>
+            <p>Precisa nos enviar arquivos grandes? <a href="https://www.transfernow.net/pt" target="_blank" rel="noopener noreferrer">Clique aqui</a> para enviar arquivos com segurança e nos informe via e-mail ou no formulário acima.</p>
         </div>
     </div>
 
